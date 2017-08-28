@@ -27,6 +27,7 @@
 
 ![image](https://github.com/linkenliu/nodemq/tree/master/img/2.png)
 
+![image](https://github.com/linkenliu/MissCloudVue/blob/master/static/pic/IMG_0554.PNG)
 
 
 
