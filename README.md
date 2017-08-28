@@ -23,9 +23,9 @@
 * http://localhost:8081
 
 
-![image](https://github.com/linkenliu/nodemq/tree/master/img/1.PNG)
+![image](https://github.com/linkenliu/nodemq/tree/master/img/1.png)
 
-![image](https://github.com/linkenliu/nodemq/tree/master/img/2.PNG)
+![image](https://github.com/linkenliu/nodemq/tree/master/img/2.png)
 
 
 
