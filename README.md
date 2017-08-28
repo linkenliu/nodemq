@@ -18,10 +18,11 @@
 
 * node ./consumption
 
-### 访问
+### 访问说明
 
 * http://localhost:8081
 
+### 展示说明
 
 ![image](https://github.com/linkenliu/nodemq/blob/master/img/1.png)
 
