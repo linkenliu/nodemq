@@ -1,0 +1,35 @@
+/**
+ * 消费方(接收消息方)
+ **/
+
+const http = require('http'),
+    url = require('url'),
+    express = require('express'),
+    app = express(),
+    amqp = require('amqp');
+
+
+/**
+ * 连接mq服务   账户／密码／主机／端口
+ */
+var rabbitMQ = amqp.createConnection({url: 'amqp://linkenliu:linkenliu@localhost:5672'});
+
+rabbitMQ.addListener('ready', function () {
+    rabbitMQ.exchange('rabbitExchange1', {'type': 'fanout'});
+    var queue = rabbitMQ.queue('', {'exclusive': true}, function (q) {
+        //get all messages for the rabbitExchange
+        q.bind('rabbitExchange1', '#');
+        console.log("Consumption Server Start Success ");
+        // Receive messages
+        q.subscribe(function (message) {
+            // Print messages to stdout
+            console.log("received message");
+            console.log('接收的消息内容为：' + message.data.toString());
+        });
+    });
+});
+
+rabbitMQ.on('error', function (e) {
+    console.log("Error from amqp: ", e);
+});
+
