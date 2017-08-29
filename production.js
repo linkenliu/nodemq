@@ -31,9 +31,6 @@ app.get('/', function (req, res) {
  */
 app.get('/sendMessage', function (req, res) {
     let messgae = req.query.messgae;
-    if (!messgae) {
-        messgae = 'no messgae';
-    }
     sendMsg(messgae);
 });
 
@@ -49,7 +46,9 @@ function sendMsg(msg) {
             exchange.publish('key.a', msg)
         } else {
             let message = fs.readFileSync('msg.txt').toString('utf-8');
-            exchange.publish('key.a', message);
+            for(let i=0;i<10000;i++){
+                exchange.publish('key.a', message+"--"+i);
+            }
         }
     }
     else {
