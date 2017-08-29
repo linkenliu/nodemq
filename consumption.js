@@ -12,7 +12,7 @@ const http = require('http'),
 /**
  * 连接mq服务   账户／密码／主机／端口
  */
-var rabbitMQ = amqp.createConnection({url: 'amqp://linkenliu:linkenliu@localhost:5672'});
+var rabbitMQ = amqp.createConnection({url: 'amqp://guest:guest@localhost:5672'});
 
 rabbitMQ.addListener('ready', function () {
     rabbitMQ.exchange('rabbitExchange1', {'type': 'fanout'});
