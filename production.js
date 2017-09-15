@@ -46,8 +46,8 @@ function sendMsg(msg) {
             exchange.publish('key.a', msg)
         } else {
             let message = fs.readFileSync('msg.txt').toString('utf-8');
-            for(let i=0;i<10000;i++){
-                exchange.publish('key.a', message+"--"+i);
+            for(let i=0;i<10;i++){
+                exchange.publish('key.a', i+"");
             }
         }
     }
