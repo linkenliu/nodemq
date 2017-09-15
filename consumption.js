@@ -23,7 +23,7 @@ rabbitMQ.addListener('ready', function () {
         // Receive messages
         q.subscribe(function (message,headers, deliveryInfo, messageObject) {
             // Print messages to stdout
-            console.log("received message");
+            console.log("received message2");
             console.log('接收的消息内容为：' + message.data.toString());
             console.log(headers)
             console.log(deliveryInfo)
